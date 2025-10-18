@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Constructivist art background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('kandinsky-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        header {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        nav {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #002fa7;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #002fa7;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: #002fa7;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .profile-section {
+            display: flex;
+            gap: 40px;
+            margin-bottom: 50px;
+            align-items: flex-start;
+        }
+
+        .profile-photo {
+            flex-shrink: 0;
+        }
+
+        .profile-photo img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            display: block;
+        }
+
+        .bio {
+            flex: 1;
+        }
+
+        .bio p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .contact {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .contact a {
+            color: #002fa7;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #000;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: #002fa7;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .news-item {
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+
+        .news-date {
+            font-weight: 600;
+            color: #002fa7;
+            margin-bottom: 5px;
+        }
+
+        .interests {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .interest-tag {
+            background-color: #f5f5f5;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            color: #555;
+            border: 1px solid #e0e0e0;
+            transition: all 0.3s ease;
+        }
+
+        .interest-tag:hover {
+            border-color: #002fa7;
+            color: #002fa7;
+        }
+
+        a {
+            color: #002fa7;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #002fa7;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .profile-section {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Your Name</h1>
+        <nav>
+            <a href="index.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="https://scholar.google.com" target="_blank">Publications</a>
+            <a href="cv.pdf" target="_blank">CV</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="profile-section">
+            <div class="profile-photo">
+                <img src="https://via.placeholder.com/200" alt="Your Name - Headshot">
+            </div>
+            <div class="bio">
+                <p>Hi! I'm [Your Name], a [PhD student/researcher/position] at [Institution]. I'm interested in [your research areas/interests].</p>
+                
+                <p>My research focuses on [brief description of your work]. I'm particularly passionate about [specific topics or applications]. I believe that [your research philosophy or approach].</p>
+
+                <p>Before [current position], I [previous experience or education]. I'm fortunate to be advised by <a href="#">Professor Name</a> and collaborate with amazing colleagues including <a href="#">Collaborator Name</a> and <a href="#">Another Collaborator</a>.</p>
+
+                <p>Outside of research, I enjoy [hobbies/interests]. I'm always excited to connect with people working on [related topics] or anyone curious about [your field].</p>
+
+                <div class="contact">
+                    <strong>Contact:</strong><br>
+                    Email: <a href="mailto:your.email@university.edu">your.email@university.edu</a><br>
+                    <a href="https://twitter.com/yourhandle" target="_blank">Twitter</a> • 
+                    <a href="https://github.com/yourusername" target="_blank">GitHub</a> • 
+                    <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <h2>Research Interests</h2>
+            <div class="interests">
+                <span class="interest-tag">Natural Language Processing</span>
+                <span class="interest-tag">Machine Learning</span>
+                <span class="interest-tag">Your Interest Here</span>
+                <span class="interest-tag">Another Interest</span>
+            </div>
+        </section>
+
+        <section>
+            <h2>News</h2>
+            <div class="news-item">
+                <div class="news-date">October 2025</div>
+                <p>Our paper on [topic] was accepted to [Conference/Journal]! Check it out <a href="#">here</a>.</p>
+            </div>
+            <div class="news-item">
+                <div class="news-date">September 2025</div>
+                <p>Started my PhD at [University]. Excited to work on [research area]!</p>
+            </div>
+            <div class="news-item">
+                <div class="news-date">July 2025</div>
+                <p>Presented my work at [Conference] in [Location]. Great conversations with the community!</p>
+            </div>
+            <div class="news-item">
+                <div class="news-date">May 2025</div>
+                <p>Graduated with my [degree] from [University]. Thesis on [topic].</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Selected Projects</h2>
+            <div class="news-item">
+                <p><strong><a href="#">Project Title One</a></strong><br>
+                Brief description of your project, what it does, and why it matters. Include links to papers, code, or demos.</p>
+            </div>
+            <div class="news-item">
+                <p><strong><a href="#">Project Title Two</a></strong><br>
+                Another project description. You can add collaborators, venues, or other relevant details.</p>
+            </div>
+        </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Last updated: October 2025</p>
+    </footer>
+</body>
+</html>

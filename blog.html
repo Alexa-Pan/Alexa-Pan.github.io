@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Your Name</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fff;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Constructivist art background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('kandinsky-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        header {
+            margin-bottom: 50px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #000;
+        }
+
+        nav {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 2px solid #002fa7;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #002fa7;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: #002fa7;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .blog-intro {
+            margin-bottom: 50px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        article {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            gap: 25px;
+        }
+
+        article:last-of-type {
+            border-bottom: none;
+        }
+
+        .post-thumbnail {
+            flex-shrink: 0;
+            width: 200px;
+            height: 200px;
+        }
+
+        .post-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .post-content-wrapper {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .post-meta {
+            color: #666;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .post-date {
+            font-weight: 600;
+            color: #002fa7;
+        }
+
+        .post-categories {
+            margin-left: 15px;
+        }
+
+        .post-categories a {
+            color: #666;
+            text-decoration: none;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .post-categories a:hover {
+            color: #002fa7;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #000;
+        }
+
+        h2 a {
+            color: #000;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        h2 a:hover {
+            color: #002fa7;
+        }
+
+        .post-excerpt {
+            font-size: 1.05rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .read-more {
+            color: #002fa7;
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
+        }
+
+        .read-more:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        .post-content {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .post-content p {
+            margin-bottom: 20px;
+        }
+
+        .post-content h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #000;
+            position: relative;
+            display: inline-block;
+        }
+
+        .post-content h3::after {
+            content: '';
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background-color: #002fa7;
+            bottom: -3px;
+            left: 0;
+        }
+
+        .post-content ul, .post-content ol {
+            margin-left: 30px;
+            margin-bottom: 20px;
+        }
+
+        .post-content li {
+            margin-bottom: 8px;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid #002fa7;
+            padding-left: 20px;
+            margin: 25px 0;
+            color: #555;
+            font-style: italic;
+        }
+
+        .post-content a {
+            color: #002fa7;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .post-content a:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #002fa7;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            article {
+                flex-direction: column;
+            }
+
+            .post-thumbnail {
+                width: 100%;
+                height: 250px;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Blog</h1>
+        <nav>
+            <a href="index.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="https://scholar.google.com" target="_blank">Publications</a>
+            <a href="cv.pdf" target="_blank">CV</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="blog-intro">
+            Thoughts on research, learning, and life.
+        </div>
+
+        <!-- Full Blog Post Example -->
+        <article>
+            <div class="post-thumbnail">
+                <img src="https://via.placeholder.com/200x200/002fa7/ffffff?text=Blog+Post" alt="My Journey Into Research">
+            </div>
+            <div class="post-content-wrapper">
+                <div class="post-meta">
+                    <span class="post-date">October 15, 2025</span>
+                    <span class="post-categories">
+                        Categories: <a href="#">Research</a><a href="#">Personal</a>
+                    </span>
+                </div>
+                <h2><a href="#">My Journey Into [Your Field]</a></h2>
+                <div class="post-content">
+                    <p>This is where your full blog post content goes. You can write about your research journey, interesting findings, personal reflections, or anything else you'd like to share.</p>
+
+                    <p>I remember when I first started exploring [topic]. It was during [time period], and I was fascinated by [specific aspect]. What really caught my attention was how [interesting observation].</p>
+
+                    <h3>What I've Learned</h3>
+                    
+                    <p>Over the past [time period], I've discovered several key insights:</p>
+
+                    <ul>
+                        <li>First insight or lesson learned from your experience</li>
+                        <li>Second important takeaway that might help others</li>
+                        <li>Third observation about the field or your work</li>
+                    </ul>
+
+                    <p>One thing that surprised me most was <a href="#">surprising discovery</a>. This challenged my initial assumption that [previous belief], and led me to rethink [aspect of your work].</p>
+
+                    <blockquote>
+                        "You can include relevant quotes here. They'll be styled as a blockquote with nice formatting."
+                    </blockquote>
+
+                    <p>Looking forward, I'm excited to explore [future directions]. If you're interested in [related topic], I'd love to hear from you. Feel free to reach out!</p>
+                </div>
+            </div>
+        </article>
+
+        <!-- Blog Post Preview Examples -->
+        <article>
+            <div class="post-thumbnail">
+                <img src="https://via.placeholder.com/200x200/d32f2f/ffffff?text=Technical" alt="Understanding Technical Topic">
+            </div>
+            <div class="post-content-wrapper">
+                <div class="post-meta">
+                    <span class="post-date">September 22, 2025</span>
+                    <span class="post-categories">
+                        Categories: <a href="#">Technical</a>
+                    </span>
+                </div>
+                <h2><a href="#">Understanding [Technical Topic]</a></h2>
+                <div class="post-excerpt">
+                    A brief excerpt or introduction to your blog post. This gives readers a preview of what the post is about and entices them to click through to read more. Keep it concise but engaging.
+                </div>
+                <a href="#" class="read-more">Read more →</a>
+            </div>
+        </article>
+
+        <article>
+            <div class="post-thumbnail">
+                <img src="https://via.placeholder.com/200x200/ffd700/333333?text=Conference" alt="First Conference">
+            </div>
+            <div class="post-content-wrapper">
+                <div class="post-meta">
+                    <span class="post-date">August 10, 2025</span>
+                    <span class="post-categories">
+                        Categories: <a href="#">Reflections</a>
+                    </span>
+                </div>
+                <h2><a href="#">Lessons from My First Conference</a></h2>
+                <div class="post-excerpt">
+                    Attending my first academic conference was both exciting and overwhelming. Here are some thoughts on networking, presenting research, and making the most of conference opportunities.
+                </div>
+                <a href="#" class="read-more">Read more →</a>
+            </div>
+        </article>
+
+        <article>
+            <div class="post-thumbnail">
+                <img src="https://via.placeholder.com/200x200/4caf50/ffffff?text=Tutorial" alt="Beginner's Guide">
+            </div>
+            <div class="post-content-wrapper">
+                <div class="post-meta">
+                    <span class="post-date">July 5, 2025</span>
+                    <span class="post-categories">
+                        Categories: <a href="#">Tutorial</a>
+                    </span>
+                </div>
+                <h2><a href="#">A Beginner's Guide to [Tool/Method]</a></h2>
+                <div class="post-excerpt">
+                    Getting started with [tool or method] can be daunting. In this post, I walk through the basics and share some tips I wish I knew when I started.
+                </div>
+                <a href="#" class="read-more">Read more →</a>
+            </div>
+        </article>
+
+        <article>
+            <div class="post-thumbnail">
+                <img src="https://via.placeholder.com/200x200/9c27b0/ffffff?text=Ideas" alt="Research Questions">
+            </div>
+            <div class="post-content-wrapper">
+                <div class="post-meta">
+                    <span class="post-date">June 15, 2025</span>
+                    <span class="post-categories">
+                        Categories: <a href="#">Research</a><a href="#">Ideas</a>
+                    </span>
+                </div>
+                <h2><a href="#">Open Research Questions I'm Thinking About</a></h2>
+                <div class="post-excerpt">
+                    A collection of research questions and ideas that I find interesting. Some are concrete, others more speculative. Would love to discuss these with anyone working in related areas.
+                </div>
+                <a href="#" class="read-more">Read more →</a>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <p>Last updated: October 2025</p>
+    </footer>
+</body>
+</html>

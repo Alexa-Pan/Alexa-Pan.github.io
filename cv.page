@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Alexa Pan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #333;
+            background-color: #fff;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        /* Constructivist art background */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('kandinsky-background.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            z-index: -1;
+        }
+
+        header {
+            margin-bottom: 50px;
+        }
+
+        nav {
+            padding-top: 20px;
+            border-top: 2px solid #002fa7;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            margin-right: 20px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            position: relative;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        nav a:hover {
+            color: #002fa7;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -3px;
+            left: 0;
+            background-color: #002fa7;
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .cv-link {
+            color: #002fa7;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .cv-link:hover {
+            opacity: 0.7;
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #002fa7;
+            text-align: center;
+            color: #666;
+            font-size: 0.9rem;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">About</a>
+            <a href="blog.html">Blog</a>
+            <a href="cv-page.html">CV</a>
+        </nav>
+    </header>
+
+    <main>
+        <p><a href="cv.pdf" class="cv-link" target="_blank">My CV</a></p>
+    </main>
+
+    <footer>
+        <p>Last updated: October 2025</p>
+    </footer>
+</body>
+</html>

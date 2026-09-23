@@ -84,22 +84,121 @@
             width: 100%;
         }
 
-        .placeholder {
-            text-align: center;
-            margin-top: 100px;
-            font-size: 1.3rem;
-            color: #666;
-            font-style: italic;
+        .countdown {
+            margin-top: 40px;
         }
 
-        footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 2px solid #002fa7;
+        /* hovering "Coming" swaps the line for the first line of Journey of the Magi;
+           the word itself stays put, the rest hangs off it on either side */
+        .countdown-label .word {
+            position: relative;
+            display: inline-block;
+            cursor: default;
+        }
+
+        .countdown-label .pre,
+        .countdown-label .post-hover {
+            position: absolute;
+            top: 0;
+            line-height: inherit;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.4s ease, visibility 0s linear 0.4s;
+        }
+
+        .countdown-label .pre { right: 100%; padding-right: 0.3em; }
+        .countdown-label .post-hover { left: 100%; padding-left: 0.3em; }
+
+        .countdown-label .post-default {
+            transition: opacity 0.4s ease;
+        }
+
+        .countdown-label .word:hover .pre,
+        .countdown-label .word:hover .post-hover {
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.4s ease, visibility 0s;
+        }
+
+        .countdown-label .word:hover + .post-default {
+            opacity: 0;
+        }
+
+        .countdown-label {
+            line-height: 1;
             text-align: center;
-            color: #666;
+            font-size: 0.85rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            color: #1a1a1a;
+            margin-bottom: 18px;
+            font-family: 'Futura', 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        /* the Proun: a portrait canvas after Lissitzky, numbers set into four of its bars */
+        .proun {
+            width: 100%;
+            max-width: 640px;
+            margin: 0 auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10), 0 1px 3px rgba(0, 0, 0, 0.12);
+        }
+
+        .proun svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .proun text {
+            font-family: 'Futura', 'Avenir Next', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        }
+
+        .proun .value {
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+            letter-spacing: -0.02em;
+        }
+
+        .proun .name {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .countdown.done .countdown-label,
+        .countdown.done .proun {
+            display: none;
+        }
+
+        .countdown-done-message {
+            display: none;
+            margin: 60px auto 0;
+            max-width: 640px;
+            text-align: center;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #333;
+            font-style: italic;
+            border: none;
+        }
+
+        .countdown-done-message cite {
+            display: block;
+            margin-top: 20px;
             font-size: 0.9rem;
+            font-style: normal;
+            color: #666;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        .countdown.done .countdown-done-message {
+            display: block;
+        }
+
+        @media (max-width: 600px) {
+            .countdown { margin-top: 30px; }
+            .proun { max-width: 100%; }
         }
     </style>
 </head>
@@ -114,13 +213,92 @@
     </header>
 
     <main>
-        <div class="placeholder">
-            Forthcoming
+        <div class="countdown" id="countdown">
+            <p class="countdown-label"><span class="word"><span class="pre" aria-hidden="true">A cold</span>Coming<span class="post-hover" aria-hidden="true">we had of it</span></span><span class="post-default"> in</span></p>
+            <div class="proun" aria-live="polite">
+                <svg viewBox="0 0 800 520" aria-hidden="true">
+                    <defs>
+                        <clipPath id="frame"><rect width="800" height="520"/></clipPath>
+                        <filter id="plaster" x="0" y="0" width="100%" height="100%">
+                            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="3" seed="7"/>
+                            <feColorMatrix type="matrix" values="0 0 0 0 0.35  0 0 0 0 0.32  0 0 0 0 0.27  0 0 0 0.16 0"/>
+                        </filter>
+                        <radialGradient id="greyDisc" cx="40%" cy="35%" r="70%">
+                            <stop offset="0" stop-color="#7a7570"/>
+                            <stop offset="1" stop-color="#4a4541"/>
+                        </radialGradient>
+                    </defs>
+                    <g clip-path="url(#frame)">
+                        <!-- ground and its faint planes -->
+                        <rect width="800" height="520" fill="#ebe5d2"/>
+                        <polygon points="260,0 490,0 570,520 230,520" fill="#e3dcc7"/>
+                        <polygon points="0,120 800,20 800,100 0,280" fill="#e6dfcb"/>
+                        <polygon points="560,0 800,0 800,520 700,520" fill="#e8e1cd"/>
+
+                        <g transform="translate(-70 -30)">
+
+                        <!-- the disc in four pieces -->
+                        <path d="M 470 290 L 659.5 303.3 A 190 190 0 0 1 552.4 461.2 Z" fill="#b3c1c3"/>
+                        <path d="M 470 290 L 552.4 461.2 A 190 190 0 0 1 280.5 276.7 Z" fill="#1c1a17"/>
+                        <path d="M 470 290 L 280.5 276.7 A 190 190 0 0 1 387.6 118.8 Z" fill="#9fadb1"/>
+                        <path d="M 470 290 L 387.6 118.8 A 190 190 0 0 1 659.5 303.3 Z" fill="#1c1a17"/>
+                        <!-- the two white cuts -->
+                        <line x1="385.0" y1="113.4" x2="555.0" y2="466.6" stroke="#f3efe3" stroke-width="9"/>
+                        <line x1="274.5" y1="276.3" x2="665.5" y2="303.7" stroke="#f3efe3" stroke-width="9"/>
+
+                        <!-- numbers -->
+                        <text class="value" id="seconds" x="567" y="370" font-size="44" text-anchor="middle" fill="#1c1a17">--</text>
+                        <text class="name" x="567" y="392" text-anchor="middle" fill="#1c1a17">Seconds</text>
+                        <text class="value" id="minutes" x="404" y="401" font-size="44" text-anchor="middle" fill="#ece6d4">--</text>
+                        <text class="name" x="404" y="423" text-anchor="middle" fill="#ece6d4">Minutes</text>
+                        <text class="value" id="days" x="361" y="216" font-size="44" text-anchor="middle" fill="#1c1a17">--</text>
+                        <text class="name" x="361" y="238" text-anchor="middle" fill="#1c1a17">Days</text>
+                        <text class="value" id="hours" x="536" y="207" font-size="44" text-anchor="middle" fill="#ece6d4">--</text>
+                        <text class="name" x="536" y="229" text-anchor="middle" fill="#ece6d4">Hours</text>
+
+                        </g>
+
+                        <!-- plaster texture -->
+                        <rect width="800" height="520" filter="url(#plaster)" style="mix-blend-mode: multiply"/>
+                    </g>
+                </svg>
+            </div>
+            <blockquote class="countdown-done-message">
+                <p>But there was no information, and so we continued<br>
+                And arrived at evening, not a moment too soon<br>
+                Finding the place; it was (you may say) satisfactory.</p>
+                <cite>T. S. Eliot, <em>Journey of the Magi</em></cite>
+            </blockquote>
         </div>
     </main>
 
-    <footer>
-        <p>Last updated: October 2025</p>
-    </footer>
+    <script>
+        // Change this line to move the countdown.
+        // The -07:00 offset pins the target to Pacific Daylight Time, so every
+        // viewer counts down to the same instant. Use -08:00 for Pacific Standard Time.
+        const TARGET = new Date('2026-09-27T23:59:00-07:00');
+
+        const pad = (n) => String(n).padStart(2, '0');
+        const el = (id) => document.getElementById(id);
+        const container = el('countdown');
+
+        function tick() {
+            const now = new Date();
+            const diff = TARGET - now;
+            if (diff <= 0) {
+                container.classList.add('done');
+                clearInterval(timer);
+                return;
+            }
+            const totalSeconds = Math.floor(diff / 1000);
+            el('days').textContent = Math.floor(totalSeconds / 86400);
+            el('hours').textContent = pad(Math.floor((totalSeconds % 86400) / 3600));
+            el('minutes').textContent = pad(Math.floor((totalSeconds % 3600) / 60));
+            el('seconds').textContent = pad(totalSeconds % 60);
+        }
+
+        const timer = setInterval(tick, 1000);
+        tick();
+    </script>
 </body>
 </html>

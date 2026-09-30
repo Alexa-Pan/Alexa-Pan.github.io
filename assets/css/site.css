@@ -1,0 +1,404 @@
+/* ---------- shared ---------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.7;
+    color: #333;
+    background-color: #fff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* Constructivist art background */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('/kandinsky-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+
+a {
+    color: #002fa7;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+header {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #000;
+}
+
+h1 .cn {
+    font-size: 1.8rem;
+    font-weight: 400;
+}
+
+nav {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #002fa7;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+nav a:hover {
+    color: #002fa7;
+    opacity: 1;
+    text-decoration: none;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: #002fa7;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after,
+nav a.active::after {
+    width: 100%;
+}
+
+footer {
+    margin-top: 60px;
+    padding-top: 30px;
+    border-top: 2px solid #002fa7;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.placeholder {
+    text-align: center;
+    margin-top: 100px;
+    font-size: 1.3rem;
+    color: #666;
+    font-style: italic;
+}
+
+/* ---------- about page ---------- */
+.profile-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 50px;
+    align-items: flex-start;
+}
+
+.bio {
+    flex: 1;
+}
+
+.profile-photo {
+    flex-shrink: 0;
+    order: 2;
+}
+
+.profile-photo img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    border: 2px solid #002fa7;
+}
+
+.bio p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}
+
+.contact {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+section {
+    margin-bottom: 50px;
+    position: relative;
+}
+
+h2 {
+    font-size: 1.9rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #000;
+    position: relative;
+    display: inline-block;
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background-color: #002fa7;
+    bottom: -5px;
+    left: 0;
+}
+
+.interests {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.interest-tag {
+    background-color: #f5f5f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    color: #555;
+    border: 1px solid #e0e0e0;
+    transition: all 0.3s ease;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.interest-tag:hover {
+    border-color: #002fa7;
+    color: #002fa7;
+}
+
+/* ---------- cv page ---------- */
+.cv-link {
+    font-size: 1.1rem;
+}
+
+/* ---------- blog index ---------- */
+.post-list {
+    list-style: none;
+}
+
+.post-list li {
+    padding: 28px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.post-list li:first-child {
+    padding-top: 0;
+}
+
+.post-list li:last-child {
+    border-bottom: none;
+}
+
+.post-date {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.post-list h2 {
+    font-size: 1.6rem;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.post-list h2::after {
+    display: none;
+}
+
+.post-list h2 a {
+    color: #000;
+}
+
+.post-list h2 a:hover {
+    color: #002fa7;
+    opacity: 1;
+    text-decoration: none;
+}
+
+.post-desc {
+    color: #555;
+    font-size: 1.05rem;
+}
+
+/* ---------- single post ---------- */
+.post {
+    max-width: 720px;
+}
+
+.post-title {
+    font-size: 2.2rem;
+    line-height: 1.25;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.post-body {
+    font-size: 1.1rem;
+}
+
+.post-body > * + * {
+    margin-top: 1.1em;
+}
+
+.post-body h2,
+.post-body h3,
+.post-body h4 {
+    color: #000;
+    margin-top: 2em;
+    line-height: 1.3;
+    display: block;
+}
+
+.post-body h2 { font-size: 1.5rem; }
+.post-body h3 { font-size: 1.25rem; }
+.post-body h4 { font-size: 1.1rem; }
+
+.post-body h2::after {
+    display: none;
+}
+
+.post-body ul,
+.post-body ol {
+    padding-left: 1.6em;
+}
+
+.post-body li + li {
+    margin-top: 0.3em;
+}
+
+.post-body blockquote {
+    border-left: 3px solid #002fa7;
+    padding-left: 20px;
+    color: #555;
+    font-style: italic;
+}
+
+.post-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+}
+
+.post-body code {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    font-size: 0.9em;
+    background-color: #f5f5f5;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.post-body pre {
+    background-color: #f5f5f5;
+    padding: 16px 20px;
+    overflow-x: auto;
+    border-left: 3px solid #002fa7;
+    line-height: 1.5;
+}
+
+.post-body pre code {
+    background: none;
+    padding: 0;
+    font-size: 0.9rem;
+}
+
+.post-body table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.post-body th,
+.post-body td {
+    border-bottom: 1px solid #e0e0e0;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.post-body th {
+    border-bottom: 2px solid #002fa7;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.9rem;
+}
+
+.post-body hr {
+    border: none;
+    border-top: 1px solid #e0e0e0;
+    margin: 2.5em 0;
+}
+
+.post-body .footnotes {
+    margin-top: 3em;
+    padding-top: 1.5em;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.post-body .footnotes ol {
+    padding-left: 1.4em;
+}
+
+.post-back {
+    margin-top: 50px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 0.95rem;
+}
+
+/* ---------- small screens ---------- */
+@media (max-width: 600px) {
+    .profile-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .profile-photo {
+        order: 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .post-title {
+        font-size: 1.7rem;
+    }
+}

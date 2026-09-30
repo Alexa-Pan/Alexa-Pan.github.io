@@ -1,0 +1,33 @@
+title: Alexa Pan
+description: Alexa Pan's personal site and blog.
+url: "https://alexa-pan.github.io"
+baseurl: ""
+theme: null            # GitHub Pages would otherwise apply its Primer theme on top
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  math_engine: nil        # leave $...$ alone so MathJax renders it in the browser
+
+# Posts live at /blog/<title>/
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      heading: Blog
+      math: false
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - node_modules

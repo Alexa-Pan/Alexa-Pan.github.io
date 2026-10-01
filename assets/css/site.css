@@ -17,8 +17,8 @@
 }
 
 /* ---------- shared ---------- */
-/* A Kandinsky watercolour, faded into the paper. The source is small, so a little blur hides the upscaling. */
-body::before {
+/* A Kandinsky watercolour, faded into the paper, on the About page only. The source is small, so a little blur hides the upscaling. */
+body.home::before {
     content: '';
     position: fixed;
     inset: -12px;

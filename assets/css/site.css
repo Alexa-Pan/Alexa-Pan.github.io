@@ -10,6 +10,7 @@
     --vermilion-deep: #a33f2a;
     --ochre: #d9ad3c;
     --ochre-pale: rgba(217, 173, 60, 0.22);
+    --lemon: #f3e24a;
     --powder: #a9bfd8;
     --line: #2a2730;
     --hair: rgba(38, 36, 48, 0.16);
@@ -31,36 +32,6 @@ body {
     margin: 0 auto;
     padding: 40px 20px;
     position: relative;
-}
-
-/* One large pale ovoid, after the egg-forms in The Ten Largest, sitting behind the header */
-body::before {
-    content: '';
-    position: fixed;
-    top: -22vmin;
-    right: -14vmin;
-    width: 62vmin;
-    height: 78vmin;
-    border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
-    background: var(--ochre-pale);
-    border: 1.5px solid rgba(217, 173, 60, 0.45);
-    z-index: -1;
-    pointer-events: none;
-}
-
-/* a second, smaller one low on the left, in powder blue */
-body::after {
-    content: '';
-    position: fixed;
-    bottom: -16vmin;
-    left: -10vmin;
-    width: 34vmin;
-    height: 42vmin;
-    border-radius: 50% 50% 50% 50% / 45% 45% 55% 55%;
-    background: rgba(169, 191, 216, 0.22);
-    border: 1.5px solid rgba(169, 191, 216, 0.55);
-    z-index: -1;
-    pointer-events: none;
 }
 
 a {
@@ -122,7 +93,7 @@ nav a::after {
     height: 2px;
     bottom: -3px;
     left: 0;
-    background-color: var(--ochre);
+    background-color: var(--lemon);
     transition: width 0.3s ease;
 }
 
@@ -172,8 +143,7 @@ footer {
     object-fit: cover;
     display: block;
     border: 1px solid var(--line);
-    border-radius: 50% 50% 50% 50% / 58% 58% 42% 42%;
-    box-shadow: 10px 10px 0 var(--ochre-pale);
+    border-radius: 14px;
 }
 
 .bio p {

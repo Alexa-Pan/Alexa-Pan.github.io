@@ -23,11 +23,11 @@ body::before {
     position: fixed;
     inset: -12px;
     z-index: -1;
-    background-image: url('/assets/images/blaue-reiter-cover.jpg');
+    background-image: url('/assets/images/lyrical.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.045;
+    opacity: 0.09;
     filter: blur(2px);
     pointer-events: none;
 }

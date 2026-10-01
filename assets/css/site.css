@@ -10,13 +10,27 @@
     --vermilion-deep: #a33f2a;
     --ochre: #d9ad3c;
     --ochre-pale: rgba(217, 173, 60, 0.22);
-    --lemon: #f3e24a;
+    --accent: #4f7f4e;   /* the green of the orbs in The Ten Largest */
     --powder: #a9bfd8;
     --line: #2a2730;
     --hair: rgba(38, 36, 48, 0.16);
 }
 
 /* ---------- shared ---------- */
+/* Kandinsky's Blue Rider watercolour, faded into the paper */
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background-image: url('/assets/images/blue-rider.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    background-repeat: no-repeat;
+    opacity: 0.07;
+    pointer-events: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -93,7 +107,7 @@ nav a::after {
     height: 2px;
     bottom: -3px;
     left: 0;
-    background-color: var(--lemon);
+    background-color: var(--accent);
     transition: width 0.3s ease;
 }
 

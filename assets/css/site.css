@@ -1,4 +1,37 @@
+/* ---------- palette: af Klint's mauve ground and ochre, Mondrian's Prussian blue and vermilion ---------- */
+:root {
+    --paper: #ede8ee;
+    --paper-deep: #e3dce6;
+    --ink: #262430;
+    --ink-soft: #5b5766;
+    --ink-faint: #8d889a;
+    --prussian: #1f2f6b;
+    --vermilion: #c9553c;
+    --vermilion-deep: #a33f2a;
+    --ochre: #d9ad3c;
+    --ochre-pale: rgba(217, 173, 60, 0.22);
+    --accent: #4f7f4e;   /* the green of the orbs in The Ten Largest */
+    --powder: #a9bfd8;
+    --line: #2a2730;
+    --hair: rgba(38, 36, 48, 0.16);
+}
+
 /* ---------- shared ---------- */
+/* A Kandinsky watercolour, faded into the paper, on the About page only. The source is small, so a little blur hides the upscaling. */
+body.home::before {
+    content: '';
+    position: fixed;
+    inset: -12px;
+    z-index: -1;
+    background-image: url('/assets/images/lyrical.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.045;
+    filter: blur(2px);
+    pointer-events: none;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -8,39 +41,24 @@
 body {
     font-family: Georgia, 'Times New Roman', serif;
     line-height: 1.7;
-    color: #333;
-    background-color: #fff;
+    color: var(--ink);
+    background-color: var(--paper);
     max-width: 900px;
     margin: 0 auto;
     padding: 40px 20px;
     position: relative;
 }
 
-/* Constructivist art background */
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('/kandinsky-background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.05;
-    z-index: -1;
-}
-
 a {
-    color: #002fa7;
+    color: var(--vermilion);
     text-decoration: none;
-    transition: opacity 0.3s ease;
+    border-bottom: 1px solid rgba(201, 85, 60, 0.35);
+    transition: color 0.3s ease, border-color 0.3s ease;
 }
 
 a:hover {
-    opacity: 0.7;
-    text-decoration: underline;
+    color: var(--vermilion-deep);
+    border-bottom-color: var(--vermilion-deep);
 }
 
 header {
@@ -52,7 +70,7 @@ h1 {
     font-size: 2.8rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: #000;
+    color: var(--prussian);
 }
 
 h1 .cn {
@@ -63,12 +81,13 @@ h1 .cn {
 nav {
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 2px solid #002fa7;
+    border-top: 1px solid var(--line);
 }
 
 nav a {
-    color: #333;
+    color: var(--ink-soft);
     text-decoration: none;
+    border-bottom: none;
     margin-right: 20px;
     font-size: 1rem;
     transition: color 0.3s ease;
@@ -77,7 +96,7 @@ nav a {
 }
 
 nav a:hover {
-    color: #002fa7;
+    color: var(--vermilion);
     opacity: 1;
     text-decoration: none;
 }
@@ -89,7 +108,7 @@ nav a::after {
     height: 2px;
     bottom: -3px;
     left: 0;
-    background-color: #002fa7;
+    background-color: var(--accent);
     transition: width 0.3s ease;
 }
 
@@ -101,9 +120,9 @@ nav a.active::after {
 footer {
     margin-top: 60px;
     padding-top: 30px;
-    border-top: 2px solid #002fa7;
+    border-top: 1px solid var(--line);
     text-align: center;
-    color: #666;
+    color: var(--ink-faint);
     font-size: 0.9rem;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
@@ -112,7 +131,7 @@ footer {
     text-align: center;
     margin-top: 100px;
     font-size: 1.3rem;
-    color: #666;
+    color: var(--ink-faint);
     font-style: italic;
 }
 
@@ -138,7 +157,8 @@ footer {
     height: 200px;
     object-fit: cover;
     display: block;
-    border: 2px solid #002fa7;
+    border: 1px solid var(--line);
+    border-radius: 14px;
 }
 
 .bio p {
@@ -149,7 +169,7 @@ footer {
 .contact {
     margin-top: 20px;
     padding-top: 15px;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--hair);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
@@ -162,7 +182,7 @@ h2 {
     font-size: 1.9rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #000;
+    color: var(--prussian);
     position: relative;
     display: inline-block;
 }
@@ -172,7 +192,7 @@ h2::after {
     position: absolute;
     width: 40px;
     height: 3px;
-    background-color: #002fa7;
+    background-color: var(--ochre);
     bottom: -5px;
     left: 0;
 }
@@ -185,19 +205,19 @@ h2::after {
 }
 
 .interest-tag {
-    background-color: #f5f5f5;
+    background-color: transparent;
     padding: 8px 16px;
     border-radius: 20px;
     font-size: 0.95rem;
-    color: #555;
-    border: 1px solid #e0e0e0;
+    color: var(--ink-soft);
+    border: 1px solid var(--line);
     transition: all 0.3s ease;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 .interest-tag:hover {
-    border-color: #002fa7;
-    color: #002fa7;
+    background-color: var(--ochre-pale);
+    color: var(--prussian);
 }
 
 /* ---------- cv page ---------- */
@@ -212,7 +232,7 @@ h2::after {
 
 .post-list li {
     padding: 28px 0;
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--hair);
 }
 
 .post-list li:first-child {
@@ -228,7 +248,7 @@ h2::after {
     font-size: 0.85rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
-    color: #666;
+    color: var(--ink-faint);
     margin-bottom: 4px;
 }
 
@@ -243,17 +263,16 @@ h2::after {
 }
 
 .post-list h2 a {
-    color: #000;
+    color: var(--prussian);
+    border-bottom: none;
 }
 
 .post-list h2 a:hover {
-    color: #002fa7;
-    opacity: 1;
-    text-decoration: none;
+    color: var(--vermilion);
 }
 
 .post-desc {
-    color: #555;
+    color: var(--ink-soft);
     font-size: 1.05rem;
 }
 
@@ -280,7 +299,7 @@ h2::after {
 .post-body h2,
 .post-body h3,
 .post-body h4 {
-    color: #000;
+    color: var(--prussian);
     margin-top: 2em;
     line-height: 1.3;
     display: block;
@@ -304,9 +323,9 @@ h2::after {
 }
 
 .post-body blockquote {
-    border-left: 3px solid #002fa7;
+    border-left: 1px solid var(--line);
     padding-left: 20px;
-    color: #555;
+    color: var(--ink-soft);
     font-style: italic;
 }
 
@@ -320,16 +339,16 @@ h2::after {
 .post-body code {
     font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
     font-size: 0.9em;
-    background-color: #f5f5f5;
+    background-color: var(--paper-deep);
     padding: 2px 5px;
     border-radius: 3px;
 }
 
 .post-body pre {
-    background-color: #f5f5f5;
+    background-color: var(--paper-deep);
     padding: 16px 20px;
     overflow-x: auto;
-    border-left: 3px solid #002fa7;
+    border-left: 1px solid var(--line);
     line-height: 1.5;
 }
 
@@ -347,33 +366,39 @@ h2::after {
 
 .post-body th,
 .post-body td {
-    border-bottom: 1px solid #e0e0e0;
+    border-bottom: 1px solid var(--hair);
     padding: 8px 12px;
     text-align: left;
 }
 
 .post-body th {
-    border-bottom: 2px solid #002fa7;
+    border-bottom: 1px solid var(--line);
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-size: 0.9rem;
 }
 
 .post-body hr {
     border: none;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--line);
     margin: 2.5em 0;
 }
 
 .post-body .footnotes {
     margin-top: 3em;
     padding-top: 1.5em;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid var(--line);
     font-size: 0.95rem;
-    color: #555;
+    color: var(--ink-soft);
 }
 
 .post-body .footnotes ol {
     padding-left: 1.4em;
+}
+
+.post-back a,
+.post-body .reversefootnote,
+.post-body .footnote {
+    border-bottom: none;
 }
 
 .post-back {

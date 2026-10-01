@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% if page.url == "/" %}<title>Alexa Pan Yue 潘悦</title>{% seo title=false %}{% else %}{% seo %}{% endif %}
     {% feed_meta %}
-    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}?v={{ site.time | date: '%s' }}">
     {% if page.math %}
     <script>
         window.MathJax = {

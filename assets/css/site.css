@@ -17,17 +17,18 @@
 }
 
 /* ---------- shared ---------- */
-/* Kandinsky's Blue Rider watercolour, faded into the paper */
+/* A Kandinsky watercolour, faded into the paper. The source is small, so a little blur hides the upscaling. */
 body::before {
     content: '';
     position: fixed;
-    inset: 0;
+    inset: -12px;
     z-index: -1;
-    background-image: url('/assets/images/blue-rider.jpg');
+    background-image: url('/assets/images/kandinsky-watercolour.jpg');
     background-size: cover;
-    background-position: center 30%;
+    background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.07;
+    opacity: 0.08;
+    filter: blur(2px);
     pointer-events: none;
 }
 

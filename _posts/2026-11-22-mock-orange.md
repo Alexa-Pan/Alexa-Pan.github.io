@@ -28,8 +28,8 @@ Korean Girlfriend but didn’t
 know who I was.)  
 I learned the real name of my Mock Orange  
 just now throwing it out. Six months old,  
-finally dead, the smallest leaves crispy  
-and hung though still green.  
+finally dead, the smallest leaves crispy and  
+hung though still green.  
 I had tried  
 to trim away the brown but it keeps  
 returning. Even now and after asking  

@@ -40,7 +40,7 @@ I was only ever moderate on average.
 I wasn’t paying that much attention.  
 I am so sad, so desperately sad.  
 A part of me really counted on it not to
-Die. I had longed for the “fragrant white  
+die. I had longed for the “fragrant white  
 flowers” again, springs and summers  
 in my childhood home  
 doing homework by the window.  
@@ -80,8 +80,8 @@ and out of the sun
 like nothing was wrong. I’m sorry  
 Mock Orange. Google said “No,  
 mock oranges shouldn’t die in winter”,  
-But maybe it is better that you  
-Won’t see what’s coming.  
+but maybe it is better that you  
+won’t see what’s coming.  
 A winter of storms and tides, flight  
 and uprooting. Spring of my uncertain  
 unscrupulous joy.

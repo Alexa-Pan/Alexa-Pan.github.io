@@ -51,7 +51,7 @@ More importantly, it seems unlikely that I will ever exhaust PQI through writing
 1. I’ll say some things outside the scrutability base, e.g. mathematical and logical truths which are already apparent to the ideal reasoner.
 2. I’ll say some things whose status in relation to the base are still yet to be determined by further reflection, e.g. normative facts, grounding principles.
 3. I may say some things that are false, unknowingly, since I will say what I believe to be true but some beliefs may be false. (Just in case readers mistook me for infallible.)
-4. I may say some things that are false, knowingly, for ironic effect (“O do not love too long”).
+4. I may say some things that are false, knowingly, for ironic effect (“O do not love too long”, if such expressions can be false).
 5. I may say some things that are not truth-apt (“boo neuralese”, or bad poems).
 6. All opinions are not my employer’s.
 

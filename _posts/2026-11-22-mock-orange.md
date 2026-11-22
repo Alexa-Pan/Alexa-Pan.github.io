@@ -14,7 +14,7 @@ years. Merriam-Webster
 started pushing ads, so I  
 no longer use it on mobile.  
 I just take what words still come  
-to me like dreams. (Good and
+to me like dreams. (Good and  
 bad dreams. One night  
 I dreamt that Buck said  
 “I enjoy Ariana songs more than  
@@ -22,14 +22,14 @@ any other” and woke up
 to remember I’ll miss  
 Live Band Karaoke night. Another  
 night I saw an old friend who had  
-finished his physics PhD become a stunt double. 
-I saw him perform and his
+finished his physics PhD become a stunt double.  
+I saw him perform and his  
 Korean Girlfriend but didn’t  
 know who I was.)  
 I learned the real name of my Mock Orange  
 just now throwing it out. Six months old,  
-finally dead, the smallest leaves crispy and
-hung though still green.  
+finally dead, the smallest leaves crispy  
+and hung though still green.  
 I had tried  
 to trim away the brown but it keeps  
 returning. Even now and after asking  
@@ -39,7 +39,7 @@ The back of the pot said moderate irrigation and
 I was only ever moderate on average.  
 I wasn’t paying that much attention.  
 I am so sad, so desperately sad.  
-A part of me really counted on it not to
+A part of me really counted on it not to  
 die. I had longed for the “fragrant white  
 flowers” again, springs and summers  
 in my childhood home  

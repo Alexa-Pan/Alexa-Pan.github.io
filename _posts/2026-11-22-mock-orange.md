@@ -1,6 +1,8 @@
 ---
-title: "Choisya Ternata (Mock Orange)"
+title: An elegy in 60 minutes
 ---
+
+**Choisya Ternata (Mock Orange)**
 
 I try to find the simplest  
 possible words to say  

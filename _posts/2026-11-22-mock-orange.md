@@ -69,7 +69,7 @@ I still lingered for a good half hour
 among the plant racks. Turns out  
 all I had been choosing  
 so carefully then was which spirit to witness  
-seeping away, which friend to witness  
+seeping away, which friend to waitress  
 dying. All in all, this plant  
 put up a good fight, cracking a new  
 leaf bud here and there  
